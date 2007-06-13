@@ -1,6 +1,6 @@
 %define name	cuiterm
-%define version	0.9.8
-%define release %mkrel 2
+%define version	0.9.9
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	Composite user interface terminal
@@ -14,7 +14,7 @@ Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ImageMagick
 BuildRequires:	bison flex
-BuildRequires:	libgnome2-devel libgnome-vfs2-devel
+BuildRequires:	libgnome2-devel libgnome-vfs2-devel libgnomeui2-devel
 Requires(post): scrollkeeper
 Requires(postun):scrollkeeper
 
