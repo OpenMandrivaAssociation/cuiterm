@@ -11,6 +11,7 @@ Source:		%{name}-%{version}.tar.bz2
 URL:		http://linux.pte.hu/~pipas/CUI/
 License:	GPL
 Group:		Terminals
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ImageMagick
 BuildRequires:	bison flex
 BuildRequires:	libgnome2-devel libgnome-vfs2-devel libgnomeui2-devel
