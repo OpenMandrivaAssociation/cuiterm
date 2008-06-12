@@ -75,13 +75,17 @@ convert -size 16x16 pixmaps/tux.png $RPM_BUILD_ROOT/%_miconsdir/%name.png
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if %mdkversion < 200900
 %post
 %update_menus
 %update_scrollkeeper
+%endif
 		
+%if %mdkversion < 200900
 %postun
 %clean_menus
 %clean_scrollkeeper
+%endif
 
 %files -f %{name}.lang
 %defattr(-,root,root)
