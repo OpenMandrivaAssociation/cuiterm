@@ -1,6 +1,6 @@
 %define name	cuiterm
 %define version	0.9.9
-%define release %mkrel 4
+%define release %mkrel 5
 
 Name: 	 	%{name}
 Summary: 	Composite user interface terminal
@@ -8,8 +8,9 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		%{name}-%{version}.tar.bz2
+Patch0:		cuiterm-0.9.9-mdv-fix-str-fmt.patch	
 URL:		http://linux.pte.hu/~pipas/CUI/
-License:	GPL
+License:	GPLv2+
 Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	imagemagick
@@ -37,6 +38,7 @@ and some UNIX utilities.
 
 %prep
 %setup -q
+%patch0 -p1 -b .strfmt
 
 %build
 %configure2_5x --disable-gtk-doc
