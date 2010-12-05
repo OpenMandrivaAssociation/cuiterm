@@ -1,6 +1,6 @@
 %define name	cuiterm
 %define version	0.9.9
-%define release %mkrel 5
+%define release %mkrel 6
 
 Name: 	 	%{name}
 Summary: 	Composite user interface terminal
