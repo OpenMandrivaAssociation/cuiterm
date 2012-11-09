@@ -1,0 +1,192 @@
+diff -p -up cuiterm-0.9.9/src/cat_parser.y.strfmt cuiterm-0.9.9/src/cat_parser.y
+--- cuiterm-0.9.9/src/cat_parser.y.strfmt	2006-06-28 12:11:22.000000000 +0200
++++ cuiterm-0.9.9/src/cat_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -103,7 +103,7 @@ int cat_error(CuiWindow *window, char *c
+ 		"Error in File: %s in line %d", 
+ 		c, 
+ 		cat_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return(1);
+diff -p -up cuiterm-0.9.9/src/df_parser.y.strfmt cuiterm-0.9.9/src/df_parser.y
+--- cuiterm-0.9.9/src/df_parser.y.strfmt	2006-07-02 17:35:18.000000000 +0200
++++ cuiterm-0.9.9/src/df_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -135,7 +135,7 @@ int df_error(CuiWindow *window, char *c)
+ 	gchar *error_message;
+ 	
+ 	error_message = g_strdup_printf("Disk Usage Error: %s", c);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return 1;
+diff -p -up cuiterm-0.9.9/src/du_parser.y.strfmt cuiterm-0.9.9/src/du_parser.y
+--- cuiterm-0.9.9/src/du_parser.y.strfmt	2009-12-08 18:55:35.000000000 +0100
++++ cuiterm-0.9.9/src/du_parser.y	2009-12-08 18:55:54.000000000 +0100
+@@ -246,7 +246,7 @@ int du_error(CuiWindow *window, char *c)
+   error_message = g_strdup_printf(
+     "Disk Usage Error: %s in line %d\n",
+     c, du_lineno);
+-  g_warning(error_message);
++  g_warning("%s", error_message);
+   cui_window_set_title(window, error_message);
+   g_free(error_message);
+   return 1;
+diff -p -up cuiterm-0.9.9/src/exit_parser.y.strfmt cuiterm-0.9.9/src/exit_parser.y
+--- cuiterm-0.9.9/src/exit_parser.y.strfmt	2006-06-28 12:11:23.000000000 +0200
++++ cuiterm-0.9.9/src/exit_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -65,7 +65,7 @@ int exit_error(CuiWindow *window, char *
+ 		"Shell Exit Error: %s in line %d", 
+ 		c,
+ 		exit_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return(1);
+diff -p -up cuiterm-0.9.9/src/fdisk_parser.y.strfmt cuiterm-0.9.9/src/fdisk_parser.y
+--- cuiterm-0.9.9/src/fdisk_parser.y.strfmt	2006-07-09 09:13:12.000000000 +0200
++++ cuiterm-0.9.9/src/fdisk_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -99,7 +99,7 @@ int fdisk_error(CuiWindow *window, char 
+ 	error_message = g_strdup_printf("Error in File: %s in lineno %d",
+ 			c,
+ 			fdisk_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return(1);
+diff -p -up cuiterm-0.9.9/src/finger_parser.y.strfmt cuiterm-0.9.9/src/finger_parser.y
+--- cuiterm-0.9.9/src/finger_parser.y.strfmt	2006-06-28 12:11:24.000000000 +0200
++++ cuiterm-0.9.9/src/finger_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -134,7 +134,7 @@ int finger_error(CuiWindow *window, char
+ 		"Error in User Information: %s in line %d", 
+ 		c,
+ 		finger_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return(1);
+diff -p -up cuiterm-0.9.9/src/getfacl_parser.y.strfmt cuiterm-0.9.9/src/getfacl_parser.y
+--- cuiterm-0.9.9/src/getfacl_parser.y.strfmt	2006-06-28 12:11:22.000000000 +0200
++++ cuiterm-0.9.9/src/getfacl_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -549,7 +549,7 @@ int getfacl_error(CuiWindow *window, cha
+ 		"Getfacl Parsing Error: %s in line %d", 
+ 		c,
+ 		getfacl_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return(1);
+diff -p -up cuiterm-0.9.9/src/ls_parser.y.strfmt cuiterm-0.9.9/src/ls_parser.y
+--- cuiterm-0.9.9/src/ls_parser.y.strfmt	2006-07-19 12:59:20.000000000 +0200
++++ cuiterm-0.9.9/src/ls_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -608,7 +608,7 @@ int ls_error(CuiWindow *window, char *c 
+ 		"Directory Contents Error: %s in line %d", 
+ 		c,
+ 		ls_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return 1;
+diff -p -up cuiterm-0.9.9/src/make_parser.y.strfmt cuiterm-0.9.9/src/make_parser.y
+--- cuiterm-0.9.9/src/make_parser.y.strfmt	2006-06-28 12:11:23.000000000 +0200
++++ cuiterm-0.9.9/src/make_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -209,7 +209,7 @@ int make_error(CuiWindow *window, char *
+ 		"Make Error: %s in line %d", 
+ 		c,
+ 		make_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return 1;
+diff -p -up cuiterm-0.9.9/src/man_parser.y.strfmt cuiterm-0.9.9/src/man_parser.y
+--- cuiterm-0.9.9/src/man_parser.y.strfmt	2009-12-08 18:54:58.000000000 +0100
++++ cuiterm-0.9.9/src/man_parser.y	2009-12-08 18:55:18.000000000 +0100
+@@ -383,7 +383,7 @@ int man_error(CuiWindow *window, char *c
+ 	error_message = g_strdup_printf("Error in File: %s in lineno %d",
+ 			c,
+ 			man_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	//g_error(error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+diff -p -up cuiterm-0.9.9/src/ps_parser.y.strfmt cuiterm-0.9.9/src/ps_parser.y
+--- cuiterm-0.9.9/src/ps_parser.y.strfmt	2006-06-28 12:11:23.000000000 +0200
++++ cuiterm-0.9.9/src/ps_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -148,7 +148,7 @@ int ps_error(CuiWindow *window, char *c)
+ 		c, 
+ 		ps_lineno);
+ 	
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return 1;
+diff -p -up cuiterm-0.9.9/src/simple_parser.y.strfmt cuiterm-0.9.9/src/simple_parser.y
+--- cuiterm-0.9.9/src/simple_parser.y.strfmt	2006-07-03 06:04:15.000000000 +0200
++++ cuiterm-0.9.9/src/simple_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -122,7 +122,7 @@ int simple_error(CuiWindow *window, char
+ 	error_message = g_strdup_printf(
+ 		"Simple Parser Error: %s in line %d", 
+ 		c, simple_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return 1;
+diff -p -up cuiterm-0.9.9/src/stat_parser.y.strfmt cuiterm-0.9.9/src/stat_parser.y
+--- cuiterm-0.9.9/src/stat_parser.y.strfmt	2006-07-17 19:36:40.000000000 +0200
++++ cuiterm-0.9.9/src/stat_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -280,7 +280,7 @@ int stat_error(CuiWindow *window, char *
+ 		"File Status Error: %s in line %d",
+ 		c,
+ 		stat_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return 1;
+diff -p -up cuiterm-0.9.9/src/tree_parser.y.strfmt cuiterm-0.9.9/src/tree_parser.y
+--- cuiterm-0.9.9/src/tree_parser.y.strfmt	2006-06-28 12:11:23.000000000 +0200
++++ cuiterm-0.9.9/src/tree_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -297,7 +297,7 @@ int tree_error(CuiWindow *window, char *
+ 		"File Tree View Error: %s in line %d", 
+ 		c,
+ 		tree_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	
+diff -p -up cuiterm-0.9.9/src/w_parser.y.strfmt cuiterm-0.9.9/src/w_parser.y
+--- cuiterm-0.9.9/src/w_parser.y.strfmt	2006-06-28 12:11:22.000000000 +0200
++++ cuiterm-0.9.9/src/w_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -107,7 +107,7 @@ int w_error(CuiWindow *window, char *c )
+ 		"Logged on Users error: %s in lineno %d",
+ 		c,
+ 		w_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return(1);
+diff -p -up cuiterm-0.9.9/src/who_parser.y.strfmt cuiterm-0.9.9/src/who_parser.y
+--- cuiterm-0.9.9/src/who_parser.y.strfmt	2006-11-06 05:54:26.000000000 +0100
++++ cuiterm-0.9.9/src/who_parser.y	2009-12-08 18:54:42.000000000 +0100
+@@ -96,7 +96,7 @@ int who_error(CuiWindow *window, char *c
+ 	error_message = g_strdup_printf("Error in File: %s in lineno %d",
+ 			c,
+ 			who_lineno);
+-	g_warning(error_message);
++	g_warning("%s", error_message);
+ 	cui_window_set_title(window, error_message);
+ 	g_free(error_message);
+ 	return(1);
