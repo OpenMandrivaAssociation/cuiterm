@@ -9,7 +9,7 @@ Release: 	%{release}
 
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		cuiterm-0.9.9-mdv-fix-str-fmt.patch	
-URL:		http://linux.pte.hu/~pipas/CUI/
+URL:		https://linux.pte.hu/~pipas/CUI/
 License:	GPLv2+
 Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-buildroot
