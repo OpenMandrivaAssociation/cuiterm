@@ -13,6 +13,11 @@ URL:		https://linux.pte.hu/~pipas/CUI/
 License:	GPLv2+
 Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	imagemagick
 BuildRequires:	bison flex
 BuildRequires:	libgnome2-devel libgnome-vfs2-devel libgnomeui2-devel
